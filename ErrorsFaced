@@ -1,0 +1,6 @@
+Unable to run index.js:
+
+This error happend in the really stages as I have changed the APP.js location, but haven't update the "index.js"
+
+Unable to solve Native and Stack:
+For some reason these dependencies package were not dowloaded properly, so I had to dowload again. Then it worked.

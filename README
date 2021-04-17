@@ -1,0 +1,17 @@
+CREATE a new project in React Native:
+
+- react-native init <NAME OF PROJECT>
+
+GO to the folder project
+- cd <NAME OF PROJECT>
+
+OPEN project in Viscual Code:
+- code .
+
+ADD DEPENDENCIES ("Libraries" like navigation and Stack):
+
+- npm install @react-navigation/native 
+- npm install @react-navigation/stack
+
+(Optional) ADDING project specific dependencies: React Native project
+- npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
