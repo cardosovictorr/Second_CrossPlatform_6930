@@ -8,6 +8,20 @@ GO to the folder project
 OPEN project in Viscual Code:
 - code .
 
+GIT and GITHUB handling:
+
+- git remote add origin https://github.com/cardosovictorr/Second_CrossPlatform_6930.git
+- To add code you have changed or done a new one:
+    - git add .
+    - git commit -m "<MAKE A MEANINNFULL COMMENT>"
+    - git push -u origin <BRANCH NAME YOU ARE WORKING ON>
+- To check branch you are working on:
+    - git branch
+- To change AND create a new branch
+    - git checkout -b <NAME OF A NEW BRANCH>
+- To just change branchs:
+    - git checkout <NAME OF BRANCH>
+
 ADD DEPENDENCIES ("Libraries" like navigation and Stack):
 
 - npm install @react-navigation/native 
@@ -15,3 +29,5 @@ ADD DEPENDENCIES ("Libraries" like navigation and Stack):
 
 (Optional) ADDING project specific dependencies: React Native project
 - npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+
+

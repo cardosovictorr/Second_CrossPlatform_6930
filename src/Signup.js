@@ -29,7 +29,10 @@ export default function SignupScreen({ navigation }) {
           Using the navigation to rout to Home screen
       */}
 
-        <Button title="Signup" onPress={() => navigation.navigate('HomeScreen')} />
+        <Button title="Signup" onPress={() => {
+          //1 call a service to store the data
+
+        }} />
       </View>
     </>
   );
