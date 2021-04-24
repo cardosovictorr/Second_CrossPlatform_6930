@@ -2,7 +2,7 @@
 
 //import * as React from 'react';
 import React, { useState } from 'react';
-import { Button, View, SafeAreaView, Text, TextInput, StyleSheet, Alert } from 'react-native';
+import { Button, SafeAreaView, TextInput, StyleSheet, Image } from 'react-native';
 
 export default function Login({ navigation }) {
   const [userName, setUserName] = useState('')
@@ -10,20 +10,31 @@ export default function Login({ navigation }) {
 
   function showLogin() {
     return (
-      <SafeAreaView>
-        <Text>User Name</Text>
+      <SafeAreaView style={styles.container}>
+        <Image
+          source={require('../images/thumbnail_CoffeeBeans.png')}
+          style={styles.imageLogo}
+        >
+        </Image>
         <TextInput
           style={styles.input}
+          placeholder="User Name"
           onChangeText={setUserName}
           text={userName}
         />
 
-        <Text>Password</Text>
         <TextInput
           style={styles.input}
+          placeholder="Password"
           secureTextEntry={true}
           onChangeText={setPassword}
           text={password}
+        />
+
+        <Button
+          title="Login"
+          onPress={() => navigation.navigate('HomeScreen')}
+        // validateUser()
         />
       </SafeAreaView>
     )
@@ -54,17 +65,6 @@ export default function Login({ navigation }) {
     <>
       {showLogin()}
 
-
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        {/*
-          Using the navigation to rout to Home screen
-      */}
-        <Button
-          title="Login"
-          onPress={() => navigation.navigate('HomeScreen')}
-        // validateUser()
-        />
-      </View>
     </>
 
   );
@@ -73,7 +73,23 @@ export default function Login({ navigation }) {
 const styles = StyleSheet.create({
   input: {
     height: 40,
-    margin: 12,
-    borderWidth: 1,
+    width: 300,
+    margin: 30,
+    backgroundColor: "#fff",
+    borderRadius: 15,
+    elevation: 6,
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'space-evenly',
+    alignItems: "center",
+    //paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    backgroundColor: "#E9F9F2",
+    // marginHorizontal: 16,
+  },
+  imageLogo: {
+    width: 150,
+    height: 150,
+    alignItems: "center"
   },
 })
