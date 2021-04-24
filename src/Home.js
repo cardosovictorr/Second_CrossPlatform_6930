@@ -51,8 +51,8 @@ export default function Home({ navigation }) {
         {title}
       </Text>
       <Image
-        source={require('../images/png_croissant.png')}
-        style={styles.ImageIconStyle}
+        source={require('../images/thumbnail_Croissant.png')}
+        style={styles.ImageCroissantStyle}
       >
       </Image>
     </TouchableOpacity>
@@ -70,8 +70,8 @@ export default function Home({ navigation }) {
         {title}
       </Text>
       <Image
-        source={require('../images/coffeeTransparent.png')}
-        style={styles.ImageIconStyle}
+        source={require('../images/thumbnail_CoffeeBeans.png')}
+        style={styles.ImageCoffeeStyle}
       >
       </Image>
     </TouchableOpacity>
@@ -122,6 +122,16 @@ const styles = StyleSheet.create({
   ImageIconStyle: {
     width: 80,
     height: 80,
+  },
+
+  ImageCroissantStyle: {
+    width: 110,
+    height: 110,
+  },
+
+  ImageCoffeeStyle: {
+    width: 110,
+    height: 110,
   }
   // title: {
   //   textAlign: 'center',
