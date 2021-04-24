@@ -2,7 +2,7 @@
 
 //import * as React from 'react';
 import React, { useState } from 'react';
-import { Button, View, Text, TextInput, StyleSheet, SafeAreaView } from 'react-native';
+import { Button, View, Text, TextInput, StyleSheet, SafeAreaView, Alert } from 'react-native';
 
 export default function SignupScreen({ navigation }) {
 
@@ -36,6 +36,27 @@ export default function SignupScreen({ navigation }) {
     )
   }
 
+  async function callCreateUser() {
+    const reply = await fetch('http://192.168.1.12:5000/users', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "name": userName,
+        "email": email,
+        "password": password
+      })
+    });
+    if (reply.status == 200) {
+      navigation.navigate('LoginScreen')
+    } else {
+      Alert.alert("Error", "Error while creating an user")
+      console.log()
+    }
+  }
+
   return (
     <>
       {showSignup()}
@@ -46,18 +67,20 @@ export default function SignupScreen({ navigation }) {
 
         <Button title="Signup" onPress={() => {
           //1 call a service to store the data
-          fetch('http://192.168.1.12:5000/users', {
-            method: 'POST',
-            headers: {
-              Accept: 'application/json',
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              "name": userName,
-              "email": email,
-              "password": password
-            })
-          })
+          callCreateUser()
+
+          // fetch('http://192.168.1.12:5000/users', {
+          //   method: 'POST',
+          //   headers: {
+          //     Accept: 'application/json',
+          //     'Content-Type': 'application/json'
+          //   },
+          //   body: JSON.stringify({
+          //     "name": userName,
+          //     "email": email,
+          //     "password": password
+          //   })
+          // })
         }} />
       </View>
     </>
@@ -69,5 +92,6 @@ const styles = StyleSheet.create({
     height: 40,
     margin: 12,
     borderWidth: 1,
+    backgroundColor: "dodgerblue",
   },
 })
