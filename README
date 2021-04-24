@@ -28,6 +28,10 @@ ADD DEPENDENCIES ("Libraries" like navigation and Stack):
 - npm install @react-navigation/stack
 
 (Optional) ADDING project specific dependencies: React Native project
-- npm install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+- npm install react-native-reanimated '
+- react-native-gesture-handler 
+- react-native-screens 
+- react-native-safe-area-context 
+- @react-native-community/masked-view
 
 
