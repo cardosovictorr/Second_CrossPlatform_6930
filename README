@@ -33,5 +33,10 @@ ADD DEPENDENCIES ("Libraries" like navigation and Stack):
 - react-native-screens 
 - react-native-safe-area-context 
 - @react-native-community/masked-view
+- npm i @react-native-community/hooks
+
+Adding the graphs dependencie:
+- yarn add react-native-chart-kit
+- yarn add react-native-svg
 
 
