@@ -1,13 +1,13 @@
 // 4 : Home Screen Component:
 
 import * as React from 'react';
-import { View, StyleSheet, StatusBar, Platform, Text, SafeAreaView, Button, Image, TouchableOpacity } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { StyleSheet, Text, SafeAreaView, Image, TouchableOpacity } from 'react-native';
+//import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+//import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
-const Separator = () => (
-  <View style={styles.separator} />
-);
+// const Separator = () => (
+//   <View style={styles.separator} />
+// );
 
 TouchableOpacity.defaultProps = { activeOpacity: 0.8 };
 
@@ -15,7 +15,10 @@ export default function Home({ navigation }) {
 
   //const { landscape } = useDeviceOrientation();
 
-  const AppButton = ({ onPress, title, size, backgroundColor }) => (
+  //button component for the home page!!
+  //I can overide the color, onPress function, size of text and the backgorund colour
+
+  const MilkButton = ({ onPress, title, size, backgroundColor }) => (
     <TouchableOpacity
       activeOpacity={0.8}
       onPress={onPress}
@@ -27,6 +30,50 @@ export default function Home({ navigation }) {
       <Text style={[styles.appButtonText, size === "sm" && { fontSize: 14 }]}>
         {title}
       </Text>
+      <Image
+        source={require('../images/milk.png')}
+        style={styles.ImageIconStyle}
+      >
+      </Image>
+    </TouchableOpacity>
+  );
+
+  const CroissantButton = ({ onPress, title, size, backgroundColor }) => (
+    <TouchableOpacity
+      activeOpacity={0.8}
+      onPress={onPress}
+      style={[
+        styles.appButtonContainer,
+        backgroundColor && { backgroundColor }
+      ]}
+    >
+      <Text style={[styles.appButtonText, size === "sm" && { fontSize: 14 }]}>
+        {title}
+      </Text>
+      <Image
+        source={require('../images/png_croissant.png')}
+        style={styles.ImageIconStyle}
+      >
+      </Image>
+    </TouchableOpacity>
+  );
+  const CoffeeButton = ({ onPress, title, size, backgroundColor }) => (
+    <TouchableOpacity
+      activeOpacity={0.8}
+      onPress={onPress}
+      style={[
+        styles.appButtonContainer,
+        backgroundColor && { backgroundColor }
+      ]}
+    >
+      <Text style={[styles.appButtonText, size === "sm" && { fontSize: 14 }]}>
+        {title}
+      </Text>
+      <Image
+        source={require('../images/coffeeTransparent.png')}
+        style={styles.ImageIconStyle}
+      >
+      </Image>
     </TouchableOpacity>
   );
 
@@ -35,9 +82,9 @@ export default function Home({ navigation }) {
   return (
 
     <SafeAreaView style={styles.container}>
-      <AppButton title="MILK" backgroundColor="#B3D6F0" onPress={() => navigation.navigate('MilkScreen')} />
-      <AppButton title="CROISSANT" backgroundColor="#FFEDC0" onPress={() => navigation.navigate('CroissantScreen')} />
-      <AppButton title="COFFEE" backgroundColor="#DBCAC6" onPress={() => navigation.navigate('CoffeeScreen')} />
+      <MilkButton title="MILK" backgroundColor="#B3D6F0" onPress={() => navigation.navigate('MilkScreen')} />
+      <CroissantButton title="CROISSANT" backgroundColor="#FFEDC0" onPress={() => navigation.navigate('CroissantScreen')} />
+      <CoffeeButton title="COFFEE BEANS" backgroundColor="#DBCAC6" onPress={() => navigation.navigate('CoffeeScreen')} />
     </SafeAreaView>
 
   );
@@ -49,7 +96,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     alignItems: "center",
     //paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-    //backgroundColor: "purple",
+    backgroundColor: "#E9F9F2",
     // marginHorizontal: 16,
   },
 
@@ -60,7 +107,8 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 12,
     height: 150,
-    width: 300
+    width: 300,
+    alignItems: "center"
   },
 
   appButtonText: {
@@ -69,6 +117,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     alignSelf: "center",
     textTransform: "uppercase"
+  },
+
+  ImageIconStyle: {
+    width: 80,
+    height: 80,
   }
   // title: {
   //   textAlign: 'center',
