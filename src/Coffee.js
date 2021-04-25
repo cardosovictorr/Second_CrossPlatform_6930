@@ -9,6 +9,7 @@ export default function Coffee({ navigation }) {
     const [coffeeQuantity, setCoffeeQuantity] = useState('')
     const [coffeeCapacity, setCoffeeCapacity] = useState('')
     const [coffeeParLevel, setCoffeeParLevel] = useState('')
+    //const [coffeeSaleMonady, setCoffeeSaleMonady] = useState('')
 
     const CalculateButton = ({ title, size, backgroundColor }) => (
         <TouchableOpacity
