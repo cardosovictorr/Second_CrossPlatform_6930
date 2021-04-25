@@ -85,6 +85,7 @@ export default function Home({ navigation }) {
       <MilkButton title="MILK" backgroundColor="#B3D6F0" onPress={() => navigation.navigate('MilkScreen')} />
       <CroissantButton title="CROISSANT" backgroundColor="#FFEDC0" onPress={() => navigation.navigate('CroissantScreen')} />
       <CoffeeButton title="COFFEE BEANS" backgroundColor="#DBCAC6" onPress={() => navigation.navigate('CoffeeScreen')} />
+
     </SafeAreaView>
 
   );
