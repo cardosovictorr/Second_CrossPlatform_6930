@@ -39,4 +39,6 @@ Adding the graphs dependencie:
 - yarn add react-native-chart-kit
 - yarn add react-native-svg
 
+GITHUB FOR THE API CONNECTIONG TO THE DATABASE (Postgres):
 
+https://github.com/cardosovictorr/server-node-postgres-cross-plat.git
